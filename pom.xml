@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- <?xml version="1.0" encoding="UTF-8"?> -->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="            http://maven.apache.org/POM/4.0.0            https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<!-- <?xml version="1.0" encoding="UTF-8"?> --><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="            http://maven.apache.org/POM/4.0.0            https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
 	<!-- IMPORTANT: groupId can be your orgId -->
-	<!-- <groupId>fc983659-35e3-47bf-8b47-f90cdf5bf8ea</groupId> -->
 	<groupId>com.intel.sc</groupId>
 	<artifactId>sc-super-pom</artifactId>
-	<version>1.0.4</version>
+	<version>1.0.5</version>
 
 	<!-- MUST be pom -->
 	<packaging>pom</packaging>
@@ -22,7 +18,7 @@
 	<!-- Central properties -->
 	<!-- ========================= -->
 	<properties>
-		<mule.runtime.version>4.9.0</mule.runtime.version>
+		<app.runtime>4.9.0</app.runtime>
 		<mule.maven.plugin.version>4.3.0</mule.maven.plugin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<type>custom</type>
@@ -67,6 +63,16 @@
 				<version>5.19.6</version>
 			</dependency>
 			<dependency>
+			  <groupId>org.apache.activemq</groupId>
+			  <artifactId>artemis-jms-client-all</artifactId>
+			  <version>2.28.0</version>
+			</dependency>
+			<dependency>
+			  <groupId>org.apache.activemq</groupId>
+			  <artifactId>artemis-jms-client</artifactId>
+			  <version>2.28.0</version>
+			</dependency>
+			<dependency>
 				<groupId>fc983659-35e3-47bf-8b47-f90cdf5bf8ea</groupId>
 				<artifactId>api-response-envelope</artifactId>
 				<version>4.0.17</version>
@@ -75,12 +81,12 @@
 			<dependency>
 				<groupId>org.apache.arrow</groupId>
 				<artifactId>arrow-memory-netty</artifactId>
-				<version>N/A</version>
+				<version>18.3.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.arrow</groupId>
 				<artifactId>arrow-vector</artifactId>
-				<version>N/A</version>
+				<version>18.3.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.mule.weave</groupId>
@@ -97,6 +103,31 @@
 				<groupId>org.bouncycastle</groupId>
 				<artifactId>bcprov-jdk15on</artifactId>
 				<version>1.78</version>
+			</dependency>
+			<dependency>
+			  <groupId>org.bouncycastle</groupId>
+			  <artifactId>bcpkix-jdk15on</artifactId>
+			  <version>1.84</version>
+			</dependency>
+			<dependency>
+			  <groupId>org.bouncycastle</groupId>
+			  <artifactId>bcmail-jdk18on</artifactId>
+			  <version>1.84</version>
+			</dependency>
+			<dependency>
+			  <groupId>org.bouncycastle</groupId>
+			  <artifactId>bcpkix-jdk18on</artifactId>
+			  <version>1.84</version>
+			</dependency>
+			<dependency>
+			  <groupId>org.bouncycastle</groupId>
+			  <artifactId>bcprov-jdk18on</artifactId>
+			  <version>1.84</version>
+			</dependency>
+			<dependency>
+			  <groupId>org.bouncycastle</groupId>
+			  <artifactId>bcutil-jdk18on</artifactId>
+			  <version>1.84</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-codec</groupId>
@@ -126,7 +157,7 @@
 			<dependency>
 				<groupId>commons-lang</groupId>
 				<artifactId>commons-lang</artifactId>
-				<version>3.12.0</version>
+				<version>2.6</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.commons</groupId>
@@ -143,11 +174,14 @@
 				<groupId>com.intel</groupId>
 				<artifactId>esb-domain-46</artifactId>
 				<version>1.0.0</version>
+				<classifier>mule-domain</classifier>
+				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>com.intel</groupId>
 				<artifactId>esb-domain</artifactId>
 				<version>1.0.0</version>
+				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>com.github.pjfanning</groupId>
@@ -158,6 +192,12 @@
 				<groupId>org.codehaus.groovy</groupId>
 				<artifactId>groovy-all</artifactId>
 				<version>2.4.21</version>
+				<classifier>indy</classifier>
+			</dependency>
+			<dependency>
+			  <groupId>org.codehaus.groovy</groupId>
+			  <artifactId>groovy-jsr223</artifactId>
+			  <version>2.5.0</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.httpcomponents</groupId>
@@ -182,13 +222,34 @@
 			</dependency>
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-annotations</artifactId>
+				<version>2.14.1</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-core</artifactId>
-				<version>2.18.6</version>
+				<version>2.14.1</version>
 			</dependency>
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-databind</artifactId>
-				<version>2.18.6</version>
+				<version>2.14.1</version>
+			</dependency>
+			<!-- Transitive deps of spring-security 6.x; pin to versions available locally -->
+			<dependency>
+				<groupId>io.micrometer</groupId>
+				<artifactId>micrometer-observation</artifactId>
+				<version>1.15.10</version>
+			</dependency>
+			<dependency>
+				<groupId>io.micrometer</groupId>
+				<artifactId>micrometer-commons</artifactId>
+				<version>1.15.10</version>
+			</dependency>
+			<dependency>
+			  <groupId>jakarta.xml.bind</groupId>
+			  <artifactId>jakarta.xml.bind-api</artifactId>
+			  <version>2.3.3</version>
 			</dependency>
 			<dependency>
 				<groupId>javax.xml.bind</groupId>
@@ -201,19 +262,41 @@
 				<version>3.5.1</version>
 			</dependency>
 			<dependency>
+			  <groupId>net.minidev</groupId>
+			  <artifactId>json-smart</artifactId>
+			  <version>2.4.9</version>
+			</dependency>
+			<dependency>
 				<groupId>io.jsonwebtoken</groupId>
 				<artifactId>jjwt-api</artifactId>
 				<version>0.11.1</version>
 			</dependency>
 			<dependency>
+			  <groupId>jakarta.xml.soap</groupId>
+			  <artifactId>jakarta.xml.soap-api</artifactId>
+			  <version>3.0.2</version>
+			</dependency>
+			<dependency>
+			  <groupId>javax.json</groupId>
+			  <artifactId>javax.json-api</artifactId>
+			  <version>1</version>
+			</dependency>
+			 <dependency>
+			  <groupId>org.glassfish</groupId>
+			  <artifactId>javax.json</artifactId>
+			  <version>1.0.4</version>
+			</dependency>
+			<dependency>
 				<groupId>io.jsonwebtoken</groupId>
 				<artifactId>jjwt-impl</artifactId>
 				<version>0.11.1</version>
+				<classifier>runtime</classifier>
 			</dependency>
 			<dependency>
 				<groupId>io.jsonwebtoken</groupId>
 				<artifactId>jjwt-jackson</artifactId>
 				<version>0.11.1</version>
+				<classifier>runtime</classifier>
 			</dependency>
 			<dependency>
 				<groupId>org.jsoup</groupId>
@@ -256,6 +339,11 @@
 				<version>2.7.2</version>
 			</dependency>
 			<dependency>
+			  <groupId>org.mongodb</groupId>
+			  <artifactId>mongodb-driver-legacy</artifactId>
+			  <version>4.0.6</version>
+			</dependency>
+			<dependency>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.7.0</version>
@@ -269,6 +357,11 @@
 				<groupId>com.microsoft.sqlserver</groupId>
 				<artifactId>mssql-jdbc</artifactId>
 				<version>6.2.2.jre8</version>
+			</dependency>
+			<dependency>
+			  <groupId>com.microsoft.sqlserver</groupId>
+			  <artifactId>mssql-jdbc</artifactId>
+			  <version>10.2.4.jre11</version>
 			</dependency>
 			<dependency>
 				<groupId>org.mule.modules</groupId>
@@ -325,7 +418,7 @@
 			<dependency>
 				<groupId>org.mule.connectors</groupId>
 				<artifactId>mule-file-connector</artifactId>
-				<version>1.5.5</version>
+				<version>1.5.2</version>
 				<classifier>mule-plugin</classifier>
 			</dependency>
 			<dependency>
@@ -343,7 +436,7 @@
 			<dependency>
 				<groupId>org.mule.module</groupId>
 				<artifactId>mule-java-module</artifactId>
-				<version>1.2.16</version>
+				<version>1.2.13</version>
 				<classifier>mule-plugin</classifier>
 			</dependency>
 			<dependency>
@@ -355,7 +448,7 @@
 			<dependency>
 				<groupId>org.mule.modules</groupId>
 				<artifactId>mule-json-module</artifactId>
-				<version>2.5.4</version>
+				<version>2.5.3</version>
 				<classifier>mule-plugin</classifier>
 			</dependency>
 			<dependency>
@@ -385,7 +478,7 @@
 			<dependency>
 				<groupId>org.mule.connectors</groupId>
 				<artifactId>mule-objectstore-connector</artifactId>
-				<version>1.2.4</version>
+				<version>1.3.0</version>
 				<classifier>mule-plugin</classifier>
 			</dependency>
 			<dependency>
@@ -415,7 +508,7 @@
 			<dependency>
 				<groupId>com.mulesoft.modules</groupId>
 				<artifactId>mule-secure-configuration-property-module</artifactId>
-				<version>1.3.0</version>
+				<version>1.2.7</version>
 				<classifier>mule-plugin</classifier>
 			</dependency>
 			<dependency>
@@ -423,6 +516,12 @@
 				<artifactId>mule-sftp-connector</artifactId>
 				<version>2.5.0</version>
 				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+			  <groupId>com.mulesoft.connectors</groupId>
+			  <artifactId>mule-smb-connector</artifactId>
+			  <version>4.0.1</version>
+			  <classifier>mule-plugin</classifier>
 			</dependency>
 			<dependency>
 				<groupId>org.mule.modules</groupId>
@@ -439,7 +538,7 @@
 			<dependency>
 				<groupId>org.mule.modules</groupId>
 				<artifactId>mule-spring-module</artifactId>
-				<version>2.1.1</version>
+				<version>1.4.0</version>
 				<classifier>mule-plugin</classifier>
 			</dependency>
 			<dependency>
@@ -449,9 +548,15 @@
 				<classifier>mule-plugin</classifier>
 			</dependency>
 			<dependency>
+			  <groupId>com.mulesoft.connectors</groupId>
+			  <artifactId>mule-twilio-connector</artifactId>
+			  <version>4.2.9</version>
+			  <classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
 				<groupId>org.mule.modules</groupId>
 				<artifactId>mule-validation-module</artifactId>
-				<version>2.0.8</version>
+				<version>2.0.6</version>
 				<classifier>mule-plugin</classifier>
 			</dependency>
 			<dependency>
@@ -459,6 +564,12 @@
 				<artifactId>mule-vm-connector</artifactId>
 				<version>2.0.1</version>
 				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+			  <groupId>com.mulesoft.connectors</groupId>
+			  <artifactId>mule-workday-connector</artifactId>
+			  <version>16.2.2</version>
+			  <classifier>mule-plugin</classifier>
 			</dependency>
 			<dependency>
 				<groupId>org.mule.connectors</groupId>
@@ -471,6 +582,12 @@
 				<artifactId>mule-xml-module</artifactId>
 				<version>1.4.2</version>
 				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+			  <groupId>com.mulesoft.connectors</groupId>
+			  <artifactId>mule4-azure-keyvault-connector</artifactId>
+			  <version>1.1.4</version>
+			  <classifier>mule-plugin</classifier>
 			</dependency>
 			<dependency>
 				<groupId>com.mulesoft.connectors</groupId>
@@ -493,6 +610,12 @@
 				<scope>test</scope>
 			</dependency>
 			<dependency>
+			  <groupId>com.microsoft.sqlserver</groupId>
+			  <artifactId>sqljdbc_auth</artifactId>
+			  <version>0.1</version>
+			  <classifier>dll</classifier>
+			</dependency>
+			<dependency>
 				<groupId>com.mysql</groupId>
 				<artifactId>mysql-connector-j</artifactId>
 				<version>9.6.0</version>
@@ -508,6 +631,11 @@
 				<version>0.1</version>
 			</dependency>
 			<dependency>
+			  <groupId>com.sap.cloud.db.jdbc</groupId>
+			  <artifactId>ngdbc-2.4.59</artifactId>
+			  <version>0.1</version>
+			</dependency>
+			<dependency>
 				<groupId>com.sap.cloud.db.jdbc</groupId>
 				<artifactId>ngdbc</artifactId>
 				<version>2.4.59</version>
@@ -516,6 +644,11 @@
 				<groupId>org.apache.pdfbox</groupId>
 				<artifactId>pdfbox</artifactId>
 				<version>2.0.27</version>
+			</dependency>
+			<dependency>
+			  <groupId>com.nimbusds</groupId>
+			  <artifactId>nimbus-jose-jwt</artifactId>
+			  <version>9.37.4</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.poi</groupId>
@@ -536,6 +669,11 @@
 				<groupId>org.postgresql</groupId>
 				<artifactId>postgresql</artifactId>
 				<version>42.7.11</version>
+			</dependency>
+			<dependency>
+			  <groupId>com.sun.xml.messaging.saaj</groupId>
+			  <artifactId>saaj-impl</artifactId>
+			  <version>3.0.4</version>
 			</dependency>
 			<dependency>
 				<groupId>org.slf4j</groupId>
@@ -575,7 +713,7 @@
 			<dependency>
 				<groupId>org.springframework.security</groupId>
 				<artifactId>spring-security-config</artifactId>
-				<version>5.8.11</version>
+				<version>6.5.9</version>
 			</dependency>
 			<dependency>
 				<groupId>com.mycompany</groupId>
@@ -585,12 +723,12 @@
 			<dependency>
 				<groupId>org.springframework.security</groupId>
 				<artifactId>spring-security-core</artifactId>
-				<version>5.8.11</version>
+				<version>6.5.10</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.security</groupId>
 				<artifactId>spring-security-crypto</artifactId>
-				<version>6.5.9</version>
+				<version>6.5.10</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.security</groupId>
@@ -617,6 +755,18 @@
 				<artifactId>xmlbeans</artifactId>
 				<version>5.1.1</version>
 			</dependency>
+			<dependency>
+			  <groupId>org.mule.modules</groupId>
+			  <artifactId>mule-module-file-extension-common</artifactId>
+			  <version>1.3.4</version>
+			  <classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+			  <groupId>com.mulesoft.connectors</groupId>
+			  <artifactId>mule-mongodb-connector</artifactId>
+			  <version>6.3.9</version>
+			  <classifier>mule-plugin</classifier>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -626,6 +776,21 @@
 	<build>
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>build-helper-maven-plugin</artifactId>
+					<version>3.1.0</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>versions-maven-plugin</artifactId>
+					<version>2.7</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.10.1</version>
+				</plugin>
 				<plugin>
 					<groupId>org.mule.tools.maven</groupId>
 					<artifactId>mule-maven-plugin</artifactId>
@@ -662,9 +827,25 @@
 	<!-- Repositories (for resolving deps) -->
 	<!-- ========================= -->
 	<repositories>
+		<!-- Maven Central first: resolves all standard Java libs (slf4j, commons, jackson, etc.) -->
 		<repository>
-			<id>anypoint-exchange</id>
-			<url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
+			<id>central</id>
+			<name>Maven Central</name>
+			<url>https://repo1.maven.org/maven2</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<!-- MuleSoft connectors and modules (no auth needed) -->
+		<repository>
+			<id>mulesoft-releases</id>
+			<name>MuleSoft Releases</name>
+			<url>https://repository.mulesoft.org/releases/</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
 		<repository>
 			<id>anypoint-exchange-v3</id>
