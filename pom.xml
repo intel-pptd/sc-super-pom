@@ -344,11 +344,6 @@
 			  <version>4.0.6</version>
 			</dependency>
 			<dependency>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.7.0</version>
-			</dependency>
-			<dependency>
 				<groupId>com.microsoft.sqlserver.msi</groupId>
 				<artifactId>msi-mssql-jdbc</artifactId>
 				<version>2.0.3</version>
