@@ -1,2 +1,2 @@
-# sc-super-pom
-Super pom for sc org to manage dependency versions
+# ce-super-pom
+Super pom for ce org to manage dependency versions
