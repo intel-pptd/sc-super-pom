@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- <?xml version="1.0" encoding="UTF-8"?> -->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="            http://maven.apache.org/POM/4.0.0            https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<!-- <?xml version="1.0" encoding="UTF-8"?> --><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="            http://maven.apache.org/POM/4.0.0            https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
 	<!-- IMPORTANT: groupId can be your orgId -->
-	<groupId>com.intel.se</groupId>
-	<artifactId>ce-super-pom</artifactId>
-	<version>1.0.2</version>
+	<groupId>com.intel.sc</groupId>
+	<artifactId>sc-super-pom</artifactId>
+	<version>1.0.5</version>
 
 	<!-- MUST be pom -->
 	<packaging>pom</packaging>
 
-	<name>ce-super-pom</name>
+	<name>sc-super-pom</name>
 	<description>Super POM for MuleSoft dependency version management</description>
 
 	<!-- ========================= -->
 	<!-- Central properties -->
 	<!-- ========================= -->
 	<properties>
-		<mule.runtime.version>4.9.0</mule.runtime.version>
-		<app.runtime>${mule.runtime.version}</app.runtime>
+		<app.runtime>4.9.0</app.runtime>
 		<mule.maven.plugin.version>4.3.0</mule.maven.plugin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<type>custom</type>
@@ -36,569 +32,736 @@
 	<!-- ========================= -->
 	<dependencyManagement>
 		<dependencies>
-		<dependency>
-    <groupId>com.intel</groupId>
-    <artifactId>esb-domain-46</artifactId>
-    <version>1.0.0</version>
-    <classifier>mule-domain</classifier>
-    <scope>provided</scope>
-</dependency>
-
-<dependency>
-    <groupId>com.intel</groupId>
-    <artifactId>esb-domain</artifactId>
-    <version>1.0.0</version>
-    <classifier>mule-domain</classifier>
-    <scope>provided</scope>
-</dependency>
-
-<dependency>
-    <groupId>com.mulesoft.munit</groupId>
-    <artifactId>munit-runner</artifactId>
-    <version>3.2.2</version>
-    <classifier>mule-plugin</classifier>
-    <scope>test</scope>
-</dependency>
-
-<dependency>
-    <groupId>com.mulesoft.munit</groupId>
-    <artifactId>munit-tools</artifactId>
-    <version>3.3.2</version>
-    <classifier>mule-plugin</classifier>
-    <scope>test</scope>
-</dependency>
-
-<dependency>
-    <groupId>fc983659-35e3-47bf-8b47-f90cdf5bf8ea</groupId>
-    <artifactId>api-response-envelope</artifactId>
-    <version>4.0.17</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.weave</groupId>
-    <artifactId>assertions</artifactId>
-    <version>1.2.2</version>
-    <classifier>test</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.bouncycastle</groupId>
-    <artifactId>bcpkix-jdk15on</artifactId>
-    <version>1.84</version>
-</dependency>
-
-<dependency>
-    <groupId>fc983659-35e3-47bf-8b47-f90cdf5bf8ea</groupId>
-    <artifactId>error-response</artifactId>
-    <version>1.0.18</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.codehaus.groovy</groupId>
-    <artifactId>groovy-all</artifactId>
-    <version>2.4.21</version>
-</dependency>
-
-<dependency>
-    <groupId>fc983659-35e3-47bf-8b47-f90cdf5bf8ea</groupId>
-    <artifactId>intel-json-logger</artifactId>
-    <version>4.0.4</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>io.jsonwebtoken</groupId>
-    <artifactId>jjwt-impl</artifactId>
-    <version>0.11.1</version>
-    <classifier>runtime</classifier>
-</dependency>
-
-<dependency>
-    <groupId>io.jsonwebtoken</groupId>
-    <artifactId>jjwt-jackson</artifactId>
-    <version>0.11.1</version>
-    <classifier>runtime</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.modules</groupId>
-    <artifactId>mule-aggregators-module</artifactId>
-    <version>1.1.2</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.modules</groupId>
-    <artifactId>mule-compression-module</artifactId>
-    <version>2.2.4</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>com.mulesoft.modules</groupId>
-    <artifactId>mule-cryptography-module</artifactId>
-    <version>2.0.0</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.connectors</groupId>
-    <artifactId>mule-db-connector</artifactId>
-    <version>1.15.0</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.connectors</groupId>
-    <artifactId>mule-email-connector</artifactId>
-    <version>1.7.6</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.connectors</groupId>
-    <artifactId>mule-file-connector</artifactId>
-    <version>1.5.2</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.connectors</groupId>
-    <artifactId>mule-ftp-connector</artifactId>
-    <version>2.0.0</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.connectors</groupId>
-    <artifactId>mule-http-connector</artifactId>
-    <version>1.10.0</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.module</groupId>
-    <artifactId>mule-java-module</artifactId>
-    <version>1.2.13</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.connectors</groupId>
-    <artifactId>mule-jms-connector</artifactId>
-    <version>1.10.2</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.modules</groupId>
-    <artifactId>mule-json-module</artifactId>
-    <version>2.5.3</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.modules</groupId>
-    <artifactId>mule-module-file-extension-common</artifactId>
-    <version>1.3.4</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>com.mulesoft.connectors</groupId>
-    <artifactId>mule-mongodb-connector</artifactId>
-    <version>6.3.9</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.modules</groupId>
-    <artifactId>mule-oauth-module</artifactId>
-    <version>1.1.21</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.connectors</groupId>
-    <artifactId>mule-objectstore-connector</artifactId>
-    <version>1.3.0</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>com.mulesoft.connectors</groupId>
-    <artifactId>mule-redis-connector</artifactId>
-    <version>5.4.7</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>com.mulesoft.connectors</groupId>
-    <artifactId>mule-salesforce-connector</artifactId>
-    <version>11.2.0</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.modules</groupId>
-    <artifactId>mule-scripting-module</artifactId>
-    <version>2.1.1</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-<dependency>
-    <groupId>com.mulesoft.modules</groupId>
-    <artifactId>mule-secure-configuration-property-module</artifactId>
-    <version>1.2.7</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.connectors</groupId>
-    <artifactId>mule-sftp-connector</artifactId>
-    <version>2.5.0</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>com.mulesoft.connectors</groupId>
-    <artifactId>mule-smb-connector</artifactId>
-    <version>4.0.1</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.modules</groupId>
-    <artifactId>mule-spring-module</artifactId>
-    <version>1.4.0</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.modules</groupId>
-    <artifactId>mule-tracing-module</artifactId>
-    <version>1.2.0</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>com.mulesoft.connectors</groupId>
-    <artifactId>mule-twilio-connector</artifactId>
-    <version>4.2.9</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.modules</groupId>
-    <artifactId>mule-validation-module</artifactId>
-    <version>2.0.6</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.connectors</groupId>
-    <artifactId>mule-vm-connector</artifactId>
-    <version>2.0.1</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>com.mulesoft.connectors</groupId>
-    <artifactId>mule-workday-connector</artifactId>
-    <version>16.2.2</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.connectors</groupId>
-    <artifactId>mule-wsc-connector</artifactId>
-    <version>1.11.0</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>org.mule.modules</groupId>
-    <artifactId>mule-xml-module</artifactId>
-    <version>1.4.2</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>com.mulesoft.connectors</groupId>
-    <artifactId>mule4-azure-keyvault-connector</artifactId>
-    <version>1.1.4</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>com.mulesoft.connectors</groupId>
-    <artifactId>mule4-snowflake-connector</artifactId>
-    <version>1.3.1</version>
-    <classifier>mule-plugin</classifier>
-</dependency>
-
-<dependency>
-    <groupId>com.microsoft.sqlserver</groupId>
-    <artifactId>sqljdbc_auth</artifactId>
-    <version>0.1</version>
-    <classifier>dll</classifier>
-</dependency>
-
-<dependency>
-    <groupId>javax.activation</groupId>
-    <artifactId>activation</artifactId>
-    <version>1.1.1</version>
-</dependency>
-
-<dependency>
-    <groupId>org.apache.activemq</groupId>
-    <artifactId>activemq-broker</artifactId>
-    <version>5.19.6</version>
-</dependency>
-
-<dependency>
-    <groupId>org.apache.activemq</groupId>
-    <artifactId>activemq-client</artifactId>
-    <version>5.19.6</version>
-</dependency>
-
-<dependency>
-    <groupId>org.apache.activemq</groupId>
-    <artifactId>artemis-jms-client-all</artifactId>
-    <version>2.28.0</version>
-</dependency>
-
-<dependency>
-    <groupId>org.apache.activemq</groupId>
-    <artifactId>artemis-jms-client</artifactId>
-    <version>2.28.0</version>
-</dependency>
-
-<dependency>
-    <groupId>org.bouncycastle</groupId>
-    <artifactId>bcmail-jdk18on</artifactId>
-    <version>1.84</version>
-</dependency>
-
-<dependency>
-    <groupId>org.bouncycastle</groupId>
-    <artifactId>bcpkix-jdk18on</artifactId>
-    <version>1.84</version>
-</dependency>
-
-<dependency>
-    <groupId>org.bouncycastle</groupId>
-    <artifactId>bcprov-jdk18on</artifactId>
-    <version>1.84</version>
-</dependency>
-
-<dependency>
-    <groupId>org.bouncycastle</groupId>
-    <artifactId>bcutil-jdk18on</artifactId>
-    <version>1.84</version>
-</dependency>
-
-<dependency>
-    <groupId>commons-codec</groupId>
-    <artifactId>commons-codec</artifactId>
-    <version>1.10</version>
-</dependency>
-
-<dependency>
-    <groupId>commons-io</groupId>
-    <artifactId>commons-io</artifactId>
-    <version>2.14.0</version>
-</dependency>
-
-<dependency>
-    <groupId>org.apache.commons</groupId>
-    <artifactId>commons-lang3</artifactId>
-    <version>3.18.0</version>
-</dependency>
-
-<dependency>
-    <groupId>org.codehaus.groovy</groupId>
-    <artifactId>groovy-jsr223</artifactId>
-    <version>2.5.0</version>
-</dependency>
-
-<dependency>
-    <groupId>org.apache.httpcomponents</groupId>
-    <artifactId>httpasyncclient</artifactId>
-    <version>4.1.4</version>
-</dependency>
-
-<dependency>
-    <groupId>com.fasterxml.jackson.core</groupId>
-    <artifactId>jackson-core</artifactId>
-    <version>2.14.1</version>
-</dependency>
-
-<dependency>
-    <groupId>com.fasterxml.jackson.core</groupId>
-    <artifactId>jackson-databind</artifactId>
-    <version>2.14.1</version>
-</dependency>
-<dependency>
-    <groupId>jakarta.xml.bind</groupId>
-    <artifactId>jakarta.xml.bind-api</artifactId>
-    <version>2.3.3</version>
-</dependency>
-
-<dependency>
-    <groupId>jakarta.xml.soap</groupId>
-    <artifactId>jakarta.xml.soap-api</artifactId>
-    <version>3.0.2</version>
-</dependency>
-
-<dependency>
-    <groupId>javax.json</groupId>
-    <artifactId>javax.json-api</artifactId>
-    <version>1.0</version>
-</dependency>
-
-<dependency>
-    <groupId>org.glassfish</groupId>
-    <artifactId>javax.json</artifactId>
-    <version>1.0.4</version>
-</dependency>
-
-<dependency>
-    <groupId>com.sun.mail</groupId>
-    <artifactId>javax.mail</artifactId>
-    <version>1.4</version>
-</dependency>
-
-<dependency>
-    <groupId>javax.xml.bind</groupId>
-    <artifactId>jaxb-api</artifactId>
-    <version>2.4.0-b180830.0359</version>
-</dependency>
-
-<dependency>
-    <groupId>io.jsonwebtoken</groupId>
-    <artifactId>jjwt-api</artifactId>
-    <version>0.11.1</version>
-</dependency>
-
-<dependency>
-    <groupId>net.minidev</groupId>
-    <artifactId>json-smart</artifactId>
-    <version>2.4.9</version>
-</dependency>
-
-<dependency>
-    <groupId>org.apache.logging.log4j</groupId>
-    <artifactId>log4j-core</artifactId>
-    <version>2.25.4</version>
-</dependency>
-
-<dependency>
-    <groupId>log4j</groupId>
-    <artifactId>log4j</artifactId>
-    <version>2.0</version>
-</dependency>
-
-<dependency>
-    <groupId>org.mariadb.jdbc</groupId>
-    <artifactId>mariadb-java-client</artifactId>
-    <version>2.7.2</version>
-</dependency>
-
-<dependency>
-    <groupId>org.mongodb</groupId>
-    <artifactId>mongodb-driver-legacy</artifactId>
-    <version>4.0.6</version>
-</dependency>
-
-<dependency>
-    <groupId>com.microsoft.sqlserver</groupId>
-    <artifactId>mssql-jdbc</artifactId>
-    <version>10.2.4.jre11</version>
-</dependency>
-
-<dependency>
-    <groupId>mysql</groupId>
-    <artifactId>mysql-connector-java</artifactId>
-    <version>8.1.0</version>
-</dependency>
-<dependency>
-	<groupId>com.mycompany</groupId>
-	<artifactId>ngdbc-2.4.59</artifactId>
-	<version>0.1</version>
-	</dependency>
-<dependency>
-    <groupId>com.sap.cloud.db.jdbc</groupId>
-    <artifactId>ngdbc</artifactId>
-    <version>2.4.59</version>
-</dependency>
-
-<dependency>
-    <groupId>com.nimbusds</groupId>
-    <artifactId>nimbus-jose-jwt</artifactId>
-    <version>9.37.4</version>
-</dependency>
-
-<dependency>
-    <groupId>org.postgresql</groupId>
-    <artifactId>postgresql</artifactId>
-    <version>42.7.11</version>
-</dependency>
-
-<dependency>
-    <groupId>com.sun.xml.messaging.saaj</groupId>
-    <artifactId>saaj-impl</artifactId>
-    <version>3.0.4</version>
-</dependency>
-
-<dependency>
-    <groupId>net.snowflake</groupId>
-    <artifactId>snowflake-jdbc</artifactId>
-    <version>4.0.2</version>
-</dependency>
-
-<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-beans</artifactId>
-    <version>5.3.27</version>
-</dependency>
-
-<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-context</artifactId>
-    <version>5.3.27</version>
-</dependency>
-
-<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-core</artifactId>
-    <version>5.3.27</version>
-</dependency>
-
-<dependency>
-    <groupId>org.springframework.security</groupId>
-    <artifactId>spring-security-config</artifactId>
-    <version>5.8.7</version>
-</dependency>
-
-<dependency>
-    <groupId>org.springframework.security</groupId>
-    <artifactId>spring-security-core</artifactId>
-    <version>5.8.16</version>
-</dependency>
-
-<dependency>
-    <groupId>org.springframework.security</groupId>
-    <artifactId>spring-security-crypto</artifactId>
-    <version>6.5.10</version>
-</dependency>
-
-<dependency>
-    <groupId>org.springframework.security</groupId>
-    <artifactId>spring-security-web</artifactId>
-    <version>6.5.9</version>
-</dependency>
+			<dependency>
+				<groupId>com.cloudera.impala.jdbc</groupId>
+				<artifactId>ImpalaJDBC41</artifactId>
+				<version>0.1</version>
+			</dependency>
+			<dependency>
+				<groupId>com.cloudera.impala.jdbc</groupId>
+				<artifactId>TCLIServiceClient</artifactId>
+				<version>0.1</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.activation</groupId>
+				<artifactId>activation</artifactId>
+				<version>1.1.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.activemq</groupId>
+				<artifactId>activemq-broker</artifactId>
+				<version>5.19.6</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.activemq</groupId>
+				<artifactId>activemq-client</artifactId>
+				<version>5.19.6</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.activemq</groupId>
+				<artifactId>activemq-kahadb-store</artifactId>
+				<version>5.19.6</version>
+			</dependency>
+			<dependency>
+			  <groupId>org.apache.activemq</groupId>
+			  <artifactId>artemis-jms-client-all</artifactId>
+			  <version>2.28.0</version>
+			</dependency>
+			<dependency>
+			  <groupId>org.apache.activemq</groupId>
+			  <artifactId>artemis-jms-client</artifactId>
+			  <version>2.28.0</version>
+			</dependency>
+			<dependency>
+				<groupId>fc983659-35e3-47bf-8b47-f90cdf5bf8ea</groupId>
+				<artifactId>api-response-envelope</artifactId>
+				<version>4.0.17</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.arrow</groupId>
+				<artifactId>arrow-memory-netty</artifactId>
+				<version>18.3.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.arrow</groupId>
+				<artifactId>arrow-vector</artifactId>
+				<version>18.3.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.weave</groupId>
+				<artifactId>assertions</artifactId>
+				<version>1.2.2</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.bouncycastle</groupId>
+				<artifactId>bcmail-jdk15on</artifactId>
+				<version>1.78</version>
+			</dependency>
+			<dependency>
+				<groupId>org.bouncycastle</groupId>
+				<artifactId>bcprov-jdk15on</artifactId>
+				<version>1.78</version>
+			</dependency>
+			<dependency>
+			  <groupId>org.bouncycastle</groupId>
+			  <artifactId>bcpkix-jdk15on</artifactId>
+			  <version>1.84</version>
+			</dependency>
+			<dependency>
+			  <groupId>org.bouncycastle</groupId>
+			  <artifactId>bcmail-jdk18on</artifactId>
+			  <version>1.84</version>
+			</dependency>
+			<dependency>
+			  <groupId>org.bouncycastle</groupId>
+			  <artifactId>bcpkix-jdk18on</artifactId>
+			  <version>1.84</version>
+			</dependency>
+			<dependency>
+			  <groupId>org.bouncycastle</groupId>
+			  <artifactId>bcprov-jdk18on</artifactId>
+			  <version>1.84</version>
+			</dependency>
+			<dependency>
+			  <groupId>org.bouncycastle</groupId>
+			  <artifactId>bcutil-jdk18on</artifactId>
+			  <version>1.84</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>1.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-compress</artifactId>
+				<version>1.26.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-csv</artifactId>
+				<version>1.10.0</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-httpclient</groupId>
+				<artifactId>commons-httpclient</artifactId>
+				<version>4</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>2.14.0</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>2.6</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.18.0</version>
+			</dependency>
+			<dependency>
+				<groupId>fc983659-35e3-47bf-8b47-f90cdf5bf8ea</groupId>
+				<artifactId>error-response</artifactId>
+				<version>1.0.18</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.intel</groupId>
+				<artifactId>esb-domain-46</artifactId>
+				<version>1.0.0</version>
+				<classifier>mule-domain</classifier>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.intel</groupId>
+				<artifactId>esb-domain</artifactId>
+				<version>1.0.0</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.github.pjfanning</groupId>
+				<artifactId>excel-streaming-reader</artifactId>
+				<version>3.0.5</version>
+			</dependency>
+			<dependency>
+				<groupId>org.codehaus.groovy</groupId>
+				<artifactId>groovy-all</artifactId>
+				<version>2.4.21</version>
+				<classifier>indy</classifier>
+			</dependency>
+			<dependency>
+			  <groupId>org.codehaus.groovy</groupId>
+			  <artifactId>groovy-jsr223</artifactId>
+			  <version>2.5.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpasyncclient</artifactId>
+				<version>4.1.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpclient-win</artifactId>
+				<version>4.5.13</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpclient</artifactId>
+				<version>4.5.13</version>
+			</dependency>
+			<dependency>
+				<groupId>fc983659-35e3-47bf-8b47-f90cdf5bf8ea</groupId>
+				<artifactId>intel-json-logger</artifactId>
+				<version>4.0.4</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-annotations</artifactId>
+				<version>2.14.1</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
+				<version>2.14.1</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>2.14.1</version>
+			</dependency>
+			<!-- Transitive deps of spring-security 6.x; pin to versions available locally -->
+			<dependency>
+				<groupId>io.micrometer</groupId>
+				<artifactId>micrometer-observation</artifactId>
+				<version>1.15.10</version>
+			</dependency>
+			<dependency>
+				<groupId>io.micrometer</groupId>
+				<artifactId>micrometer-commons</artifactId>
+				<version>1.15.10</version>
+			</dependency>
+			<dependency>
+			  <groupId>jakarta.xml.bind</groupId>
+			  <artifactId>jakarta.xml.bind-api</artifactId>
+			  <version>2.3.3</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.xml.bind</groupId>
+				<artifactId>jaxb-api</artifactId>
+				<version>2.4.0-b180830.0359</version>
+			</dependency>
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>3.5.1</version>
+			</dependency>
+			<dependency>
+			  <groupId>net.minidev</groupId>
+			  <artifactId>json-smart</artifactId>
+			  <version>2.4.9</version>
+			</dependency>
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt-api</artifactId>
+				<version>0.11.1</version>
+			</dependency>
+			<dependency>
+			  <groupId>jakarta.xml.soap</groupId>
+			  <artifactId>jakarta.xml.soap-api</artifactId>
+			  <version>3.0.2</version>
+			</dependency>
+			<dependency>
+			  <groupId>javax.json</groupId>
+			  <artifactId>javax.json-api</artifactId>
+			  <version>1</version>
+			</dependency>
+			 <dependency>
+			  <groupId>org.glassfish</groupId>
+			  <artifactId>javax.json</artifactId>
+			  <version>1.0.4</version>
+			</dependency>
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt-impl</artifactId>
+				<version>0.11.1</version>
+				<classifier>runtime</classifier>
+			</dependency>
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt-jackson</artifactId>
+				<version>0.11.1</version>
+				<classifier>runtime</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.jsoup</groupId>
+				<artifactId>jsoup</artifactId>
+				<version>1.15.3</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.thrift</groupId>
+				<artifactId>libthrift</artifactId>
+				<version>0.23.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-api</artifactId>
+				<version>2.25.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>2.25.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-slf4j2-impl</artifactId>
+				<version>2.25.4</version>
+			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>2</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.mail</groupId>
+				<artifactId>mail</artifactId>
+				<version>1.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mariadb.jdbc</groupId>
+				<artifactId>mariadb-java-client</artifactId>
+				<version>2.7.2</version>
+			</dependency>
+			<dependency>
+			  <groupId>org.mongodb</groupId>
+			  <artifactId>mongodb-driver-legacy</artifactId>
+			  <version>4.0.6</version>
+			</dependency>
+			<dependency>
+				<groupId>com.microsoft.sqlserver.msi</groupId>
+				<artifactId>msi-mssql-jdbc</artifactId>
+				<version>2.0.3</version>
+			</dependency>
+			<dependency>
+				<groupId>com.microsoft.sqlserver</groupId>
+				<artifactId>mssql-jdbc</artifactId>
+				<version>6.2.2.jre8</version>
+			</dependency>
+			<dependency>
+			  <groupId>com.microsoft.sqlserver</groupId>
+			  <artifactId>mssql-jdbc</artifactId>
+			  <version>10.2.4.jre11</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.modules</groupId>
+				<artifactId>mule-aggregators-module</artifactId>
+				<version>1.0.5</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.mulesoft.connectors</groupId>
+				<artifactId>mule-amazon-s3-connector</artifactId>
+				<version>7.0.0</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.mulesoft.connectors</groupId>
+				<artifactId>mule-amqp-connector</artifactId>
+				<version>1.8.1</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule</groupId>
+				<artifactId>mule-api</artifactId>
+				<version>1.0.0-M3</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.modules</groupId>
+				<artifactId>mule-compression-module</artifactId>
+				<version>2.2.6</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule</groupId>
+				<artifactId>mule-core</artifactId>
+				<version>3.8.0</version>
+			</dependency>
+			<dependency>
+				<groupId>com.mulesoft.modules</groupId>
+				<artifactId>mule-cryptography-module</artifactId>
+				<version>1.3.22</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.connectors</groupId>
+				<artifactId>mule-db-connector</artifactId>
+				<version>1.15.0</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.connectors</groupId>
+				<artifactId>mule-email-connector</artifactId>
+				<version>1.7.6</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.connectors</groupId>
+				<artifactId>mule-file-connector</artifactId>
+				<version>1.5.2</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.connectors</groupId>
+				<artifactId>mule-ftp-connector</artifactId>
+				<version>2.0.0</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.connectors</groupId>
+				<artifactId>mule-http-connector</artifactId>
+				<version>1.10.0</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.module</groupId>
+				<artifactId>mule-java-module</artifactId>
+				<version>1.2.13</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.connectors</groupId>
+				<artifactId>mule-jms-connector</artifactId>
+				<version>1.10.2</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.modules</groupId>
+				<artifactId>mule-json-module</artifactId>
+				<version>2.5.3</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.mulesoft.connectors</groupId>
+				<artifactId>mule-kafka-connector</artifactId>
+				<version>4.13.1</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.mulesoft.connectors</groupId>
+				<artifactId>mule-ldap-connector</artifactId>
+				<version>3.5.0</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.mulesoft.connectors</groupId>
+				<artifactId>mule-netsuite-connector</artifactId>
+				<version>11.9.4</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.modules</groupId>
+				<artifactId>mule-oauth-module</artifactId>
+				<version>1.1.21</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.connectors</groupId>
+				<artifactId>mule-objectstore-connector</artifactId>
+				<version>1.3.0</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.mulesoft.connectors</groupId>
+				<artifactId>mule-redis-connector</artifactId>
+				<version>5.4.7</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.mulesoft.connectors</groupId>
+				<artifactId>mule-salesforce-connector</artifactId>
+				<version>11.2.0</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.mulesoft.connectors</groupId>
+				<artifactId>mule-sap-s4hana-cloud-connector</artifactId>
+				<version>2.7.1</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.modules</groupId>
+				<artifactId>mule-scripting-module</artifactId>
+				<version>2.1.1</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.mulesoft.modules</groupId>
+				<artifactId>mule-secure-configuration-property-module</artifactId>
+				<version>1.2.7</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.connectors</groupId>
+				<artifactId>mule-sftp-connector</artifactId>
+				<version>2.5.0</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+			  <groupId>com.mulesoft.connectors</groupId>
+			  <artifactId>mule-smb-connector</artifactId>
+			  <version>4.0.1</version>
+			  <classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.modules</groupId>
+				<artifactId>mule-soapkit-module</artifactId>
+				<version>1.5.1</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.connectors</groupId>
+				<artifactId>mule-sockets-connector</artifactId>
+				<version>1.2.5</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.modules</groupId>
+				<artifactId>mule-spring-module</artifactId>
+				<version>1.4.0</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.modules</groupId>
+				<artifactId>mule-tracing-module</artifactId>
+				<version>1.2.0</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+			  <groupId>com.mulesoft.connectors</groupId>
+			  <artifactId>mule-twilio-connector</artifactId>
+			  <version>4.2.9</version>
+			  <classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.modules</groupId>
+				<artifactId>mule-validation-module</artifactId>
+				<version>2.0.6</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.connectors</groupId>
+				<artifactId>mule-vm-connector</artifactId>
+				<version>2.0.1</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+			  <groupId>com.mulesoft.connectors</groupId>
+			  <artifactId>mule-workday-connector</artifactId>
+			  <version>16.2.2</version>
+			  <classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.connectors</groupId>
+				<artifactId>mule-wsc-connector</artifactId>
+				<version>1.11.0</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>org.mule.modules</groupId>
+				<artifactId>mule-xml-module</artifactId>
+				<version>1.4.2</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+			  <groupId>com.mulesoft.connectors</groupId>
+			  <artifactId>mule4-azure-keyvault-connector</artifactId>
+			  <version>1.1.4</version>
+			  <classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.mulesoft.connectors</groupId>
+				<artifactId>mule4-snowflake-connector</artifactId>
+				<version>1.3.1</version>
+				<classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.mulesoft.munit</groupId>
+				<artifactId>munit-runner</artifactId>
+				<version>3.3.2</version>
+				<classifier>mule-plugin</classifier>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.mulesoft.munit</groupId>
+				<artifactId>munit-tools</artifactId>
+				<version>3.3.2</version>
+				<classifier>mule-plugin</classifier>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+			  <groupId>com.microsoft.sqlserver</groupId>
+			  <artifactId>sqljdbc_auth</artifactId>
+			  <version>0.1</version>
+			  <classifier>dll</classifier>
+			</dependency>
+			<dependency>
+				<groupId>com.mysql</groupId>
+				<artifactId>mysql-connector-j</artifactId>
+				<version>9.6.0</version>
+			</dependency>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>8.1.0</version>
+			</dependency>
+			<dependency>
+				<groupId>com.mycompany</groupId>
+				<artifactId>ngdbc-2.4.59</artifactId>
+				<version>0.1</version>
+			</dependency>
+			<dependency>
+			  <groupId>com.sap.cloud.db.jdbc</groupId>
+			  <artifactId>ngdbc-2.4.59</artifactId>
+			  <version>0.1</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sap.cloud.db.jdbc</groupId>
+				<artifactId>ngdbc</artifactId>
+				<version>2.4.59</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.pdfbox</groupId>
+				<artifactId>pdfbox</artifactId>
+				<version>2.0.27</version>
+			</dependency>
+			<dependency>
+			  <groupId>com.nimbusds</groupId>
+			  <artifactId>nimbus-jose-jwt</artifactId>
+			  <version>9.37.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-ooxml-schemas</artifactId>
+				<version>4.1.2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-ooxml</artifactId>
+				<version>5.4.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi</artifactId>
+				<version>5.4.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>42.7.11</version>
+			</dependency>
+			<dependency>
+			  <groupId>com.sun.xml.messaging.saaj</groupId>
+			  <artifactId>saaj-impl</artifactId>
+			  <version>3.0.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>2.0.9</version>
+			</dependency>
+			<dependency>
+				<groupId>net.snowflake</groupId>
+				<artifactId>snowflake-jdbc</artifactId>
+				<version>4.0.2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>5.3.27</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>5.3.27</version>
+			</dependency>
+			<dependency>
+				<groupId>com.mycompany</groupId>
+				<artifactId>spring-core-5.3.0</artifactId>
+				<version>0.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>5.3.27</version>
+			</dependency>
+			<dependency>
+				<groupId>com.mycompany</groupId>
+				<artifactId>spring-security-config-5.1.0.RELEASE</artifactId>
+				<version>0.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-config</artifactId>
+				<version>6.5.9</version>
+			</dependency>
+			<dependency>
+				<groupId>com.mycompany</groupId>
+				<artifactId>spring-security-core-5.1.0.RELEASE</artifactId>
+				<version>0.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-core</artifactId>
+				<version>6.5.10</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-crypto</artifactId>
+				<version>6.5.10</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-ldap</artifactId>
+				<version>6.5.9</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-web</artifactId>
+				<version>6.5.9</version>
+			</dependency>
+			<dependency>
+				<groupId>com.teradata.jdbc</groupId>
+				<artifactId>terajdbc</artifactId>
+				<version>20.00.00.54</version>
+			</dependency>
+			<dependency>
+				<groupId>com.mycompany</groupId>
+				<artifactId>terajdbc4</artifactId>
+				<version>0.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.xmlbeans</groupId>
+				<artifactId>xmlbeans</artifactId>
+				<version>5.1.1</version>
+			</dependency>
+			<dependency>
+			  <groupId>org.mule.modules</groupId>
+			  <artifactId>mule-module-file-extension-common</artifactId>
+			  <version>1.3.4</version>
+			  <classifier>mule-plugin</classifier>
+			</dependency>
+			<dependency>
+			  <groupId>com.mulesoft.connectors</groupId>
+			  <artifactId>mule-mongodb-connector</artifactId>
+			  <version>6.3.9</version>
+			  <classifier>mule-plugin</classifier>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -679,14 +842,12 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
-		<!-- Anypoint Exchange: ONLY for org-specific Exchange assets (intel-json-logger, api-response-envelope, etc.) -->
-		<!-- Requires credentials in settings.xml: server id = anypoint-exchange-v3 -->
-		<!-- <repository>
+		<repository>
 			<id>anypoint-exchange-v3</id>
 			<name>Anypoint Exchange V3</name>
 			<url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
 			<layout>default</layout>
-		</repository> -->
+		</repository>
 	</repositories>
 
 	<pluginRepositories>
